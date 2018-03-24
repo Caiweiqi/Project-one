@@ -5,12 +5,14 @@
 .wrapper{
     width: 1226px;
     margin: 0 auto;
+    overflow: hidden;
 }
 #topbar{
     height: 40px;
     width: 100%;
  /*   background: #333;*/
     color: #b0b0b0;
+
 }
 #topbar-nav{
     width: 380px;
@@ -22,7 +24,7 @@
     text-decoration:none;
     color: #b0b0b0;
     font-size: 12px;
-   float: left;
+    float: left;
 
 }
 #topbar-nav .sep{
@@ -42,5 +44,12 @@
 
 }
 #topbar-info{
+    float: right;
+    color: #b0b0b0;
+    font-size: 12px;
 
+}
+#topbar-info a{
+    text-decoration: none;
+    line-height: 40px;
 }
