@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    width: 1226px;
+    margin: 0 auto;
+}
+#topbar{
+    height: 40px;
+    width: 100%;
+ /*   background: #333;*/
+    color: #b0b0b0;
+}
+#topbar-nav{
+    width: 380px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+#topbar-nav a{
+    text-decoration:none;
+    color: #b0b0b0;
+    font-size: 12px;
+   float: left;
+
+}
+#topbar-nav .sep{
+    color: #424242;
+    height: 10px;
+    width: 14px;
+    text-align: center;
+    float: left;
+    font-size: 12px;
+}
+#topbar-cart{
+    width: 120px;
+    margin-left: 15px;
+    height: 40px;
+    float: right;
+    background: #000;
+    float: right;
+}
+#topbar-info{
+
+}
