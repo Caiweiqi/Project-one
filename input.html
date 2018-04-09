@@ -8,9 +8,18 @@
 <label for="name">name</label>
 <input type="password" id="name">
 
-<select name="选项" id="">
+<select name="选项" id="a">
     <option value="">选项1</option>
     <option value="">选项2</option>
 </select>
+<input type="button" onclick="scrollWindow()" value="滚动">点击
 </body>
+<script>
+    function scrollWindow() {
+    scrollTo(100,500)
+    }
+
+</script>
+<input type="button" onclick="scrollWindow()" value="滚动" />
+
 </html>
