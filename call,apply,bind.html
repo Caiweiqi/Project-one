@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+     function fn(a,b) {
+         console.log(this);
+         console.log(a)
+     }
+     var obj ={
+         id:1,
+         name:'aa'
+     }
+     fn.call(obj,'3','4')
+</script>
+</body>
+</html>
