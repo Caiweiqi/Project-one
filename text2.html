@@ -1,0 +1,245 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            display: inline;
+        }
+        .header,
+        .content{
+            margin-top: 30px;
+        }
+        button{
+            width: 100px;
+            height: 20px;
+        }
+        .item{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+
+</div>
+<script>
+
+    //core
+    var B = [
+        // 1.
+        {
+            name : 1,
+            len: 5,
+            next: 'A'
+        },
+        {
+            name : 2,
+            len: 3,
+            next: 'C'
+        },
+        {
+            name : 6,
+            len: 6,
+            next: 'F'
+        },
+        {
+            name : 8,
+            len: 4,
+            next: 'E'
+        }
+        // 2.
+        // {
+        //     name : 1,
+        //     len: 4,
+        //     next: 'B'
+        // },
+        // {
+        //     name : 2,
+        //     len: 2,
+        //     next: 'C'
+        // },
+        // {
+        //     name : 3,
+        //     len: 1,
+        //     next: 'F'
+        // },
+        // {
+        //     name : 4,
+        //     len: 5,
+        //     next: 'G'
+        // }
+        // 3.
+        // {
+        //     name : 1,
+        //     len: 7,
+        //     next: 'A'
+        // },
+        // {
+        //     name : 2,
+        //     len: 2,
+        //     next: 'C'
+        // },
+        // {
+        //     name : 6,
+        //     len: 8,
+        //     next: 'F'
+        // },
+        // {
+        //     name : 8,
+        //     len: 4,
+        //     next: 'E'
+        // },{
+        //     name: 9,
+        //     len : 4,
+        //     next : 'F'
+        // }
+    ]
+    var C = [
+        // 1.
+        {
+            name: 1,
+            len: 5
+        },
+        {
+            name : 2,
+            len : 4
+        },
+        {
+            name : 3,
+            len : 8
+        },
+        {
+            name : 6,
+            len : 4
+        },
+        {
+            name : 8,
+            len : 3
+        },
+        {
+            name : 9,
+            len : 9
+        }
+        // 2.
+        // {
+        //     name: 1,
+        //     len: 2
+        // },
+        // {
+        //     name : 2,
+        //     len : 1
+        // },
+        // {
+        //     name : 3,
+        //     len : 3
+        // },
+        // {
+        //     name : 4,
+        //     len : 7
+        // }
+        // 3.
+        // {
+        //     name : 2,
+        //     len: 4
+        // },
+        // {
+        //     name : 3,
+        //     len: 8
+        // },
+        // {
+        //     name : 6,
+        //     len: 4
+        // },
+        // {
+        //     name : 8,
+        //     len: 3
+        // },{
+        //     name: 9,
+        //     len : 5
+        // }
+    ]
+    for(var i = 0; i< C.length; i++){
+        C[i].next = 'C',
+            C[i].len++;
+    }
+    var arrB = B.concat();
+    console.log("B路由表")
+    console.log(arrB);
+    console.log("C路由表")
+    console.log(C);
+
+    //算法
+    var time = new Date();
+    var oldTime = time.getMinutes();
+    console.log(oldTime);
+    var newTime;
+
+    setTimeout( function merageArr(B,C){
+        var Blen = B.length;
+        var Clen = C.length;
+        for(var i = 0;i< Clen;i++){
+            for(var j = 0 ;j < Blen;j++){
+                if(C[i].name == B[j].name){
+                    if(C[i].next == B[j].next){
+                        B[j].len = C[i].len;
+                        break;
+                    }else{
+                        if(C[i].len == B[j].len){
+                            break;
+                        }else{
+                            if(C[i].len > B[j].len){
+                                break;
+                            }else{
+                                B[j].len = C[i].len;
+                                B[j].next = C[i].next;
+                                break;
+                            }
+                        }
+                    }
+                }
+                else{
+                    if(j == Blen-1){
+                        B.push(C[i]);
+                    }else{
+                        continue;
+                    }
+                }
+            }
+        }
+        newTime = time.getMinutes();
+        console.log(newTime);
+        merageArr(B,C);
+        console.log("更新失败")
+    },1900000)
+
+    var timeLen = newTime - oldTime;
+    console.log(timeLen);
+    var flag = false;
+    for(var i = 0;i< B.length;i++){
+        if(B[i].length >16){
+            flag = true;
+            break;
+        }
+    }
+    if(flag || timeLen>3){
+        console.log("failed!")
+    }else{
+       // console.log("更新后的路由表")
+        console.log(B);
+    }
+    //render
+    // var odiv = document.getElementById("app");
+    // odiv.innerHTML = JSON.stringify(B);
+</script>
+</body>
+</html>

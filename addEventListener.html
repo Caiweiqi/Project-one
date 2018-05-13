@@ -34,13 +34,17 @@
          var oDiv3 = document.getElementById("div3");
          oDiv1.addEventListener("click",function () {
              alert("1")
+
          },true);
-         oDiv2.addEventListener("click",function () {
+         oDiv2.addEventListener("click",function (event) {
              alert("2")
+             event.stopPropagation();
          },true);
-         oDiv3.addEventListener("click",function () {
+         oDiv3.addEventListener("click",function (event) {
              alert("3")
+             event.stopPropagation();
          },true);
+
 
      </script>
 </body>

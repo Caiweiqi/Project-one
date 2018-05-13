@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function  Aa(name,age) {
+    //     this.name=name;
+    // }
+    // Aa.prototype.sayHello=function () {
+    //     console.log('my name is ' + this.name)
+    // }
+    // var Aa1 = new Aa('cc1');
+    // var Aa2 = new Aa('cc2');
+    // Aa1.sayHello();
+    // Aa2.sayHello();
+    //
+
+
+    function A() {
+        this.name = 'lisi'
+    }
+    function  B() {
+        A.call(this)
+        console.log(this)
+    }
+    B.prototype = new A();
+    // B.prototype.constructor = B;
+
+    var oB1 = new B();
+    console.log(oB1.constructor);
+    console.log(oB1.name)
+
+</script>
+</body>
+</html>
