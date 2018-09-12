@@ -30,6 +30,9 @@ body{
     color: #fb5;
     font-size: 20px;
 }
+.head-child{
+    justify-content: space-between;
+}
 .head-des{
     color: white;
     font-size: 10px;
@@ -43,7 +46,7 @@ body{
     background: #ffbb55;
     color: white;
     font-size: 10px;
-    margin-left: 170px;
+    /*margin-left: 170px;*/
 }
 .body-content{
     display: flex;
@@ -81,7 +84,7 @@ body{
     justify-content: center;
 }
 .foot-pic{
-    width: 33%;
+    width: 100px;
     height: 172px;
     background: #fff;
 }
